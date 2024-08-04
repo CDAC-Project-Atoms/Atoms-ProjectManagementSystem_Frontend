@@ -22,11 +22,13 @@ const ProjectCard = ({ project }) => {
                         </div>
                         <div>
                             <DropdownMenu>
+
                                 <DropdownMenuTrigger>
                                     <Button className="rounded-full" variant="ghost" size="icon">
                                         <DotsVerticalIcon />
                                     </Button>
                                 </DropdownMenuTrigger>
+
                                 <DropdownMenuContent>
                                     <DropdownMenuItem>
                                         Update
@@ -35,6 +37,7 @@ const ProjectCard = ({ project }) => {
                                         Delete
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
+                                
                             </DropdownMenu>
                         </div>
                     </div>

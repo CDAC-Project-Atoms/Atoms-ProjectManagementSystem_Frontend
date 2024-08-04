@@ -20,10 +20,13 @@ const CreateProjectForm = () => {
     });
 
     const handleTagsChange = (newValue) => {
+        
         const currentTags = form.getValues("tags");
+
         const updatedTags = currentTags.includes(newValue)
             ? currentTags.filter(tag => tag !== newValue)
             : [...currentTags, newValue];
+
         form.setValue("tags", updatedTags);
     };
 
@@ -37,6 +40,7 @@ const CreateProjectForm = () => {
         <div>
             <FormProvider {...form}>
                 <form className="space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
+
                     <FormField
                         control={form.control}
                         name="name"
@@ -54,6 +58,7 @@ const CreateProjectForm = () => {
                             </FormItem>
                         )}
                     />
+
                     <FormField
                         control={form.control}
                         name="description"
@@ -71,6 +76,7 @@ const CreateProjectForm = () => {
                             </FormItem>
                         )}
                     />
+
                     <FormField
                         control={form.control}
                         name="category"
@@ -84,17 +90,20 @@ const CreateProjectForm = () => {
                                         <SelectTrigger className="w-full">
                                             <SelectValue placeholder="Category" />
                                         </SelectTrigger>
+
                                         <SelectContent>
                                             <SelectItem value="fullstack">Full Stack</SelectItem>
                                             <SelectItem value="frontend">FrontEnd</SelectItem>
                                             <SelectItem value="backend">BackEnd</SelectItem>
                                         </SelectContent>
+
                                     </Select>
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
+
                     <FormField
                         control={form.control}
                         name="tags"
@@ -130,6 +139,7 @@ const CreateProjectForm = () => {
                             </FormItem>
                         )}
                     />
+
                     <DialogClose>
                         {hasReachedProjectLimit ? (
                             <div>
@@ -141,6 +151,7 @@ const CreateProjectForm = () => {
                             </Button>
                         )}
                     </DialogClose>
+
                 </form>
             </FormProvider>
         </div>
