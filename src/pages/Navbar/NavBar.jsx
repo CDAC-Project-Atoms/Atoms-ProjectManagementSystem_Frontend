@@ -30,7 +30,7 @@ const Navbar = () => {
                     </DialogContent>
                 </Dialog>
                 
-                <Button variant="ghost">Upgrade</Button>
+                <Button onClick ={()=>navigate("/upgrade_plan")} variant="ghost">Upgrade</Button>
             </div>
 
             <div className='flex gap-3 items-center'>
